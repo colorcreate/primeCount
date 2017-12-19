@@ -1,7 +1,5 @@
 function getInit(){
     $('#note').text('loading...')
-    $('#digit').removeClass('danger')
-    $('#note').removeClass('danger')
     $.ajax({
         url: 'https://5a391579413d2400125bb1e7.mockapi.io/api/v1/note/1',
         method: 'get',
@@ -12,6 +10,8 @@ function getInit(){
         },
         error: function(request, status, error){
             console.error(request.responseText)
+            $('#note').text('connection error')
+            $('#note').addClass('danger')
         }
     })
 };
@@ -26,6 +26,8 @@ function put(number){
         },
         error: function(request, status, error){
             console.error(request.responseText)
+            $('#note').text('connection error')
+            $('#note').addClass('danger')
         }
     })
 }
@@ -72,11 +74,23 @@ function find(number) {
 }
 
 $('#next').on('click', function(){
+    $('#digit').removeClass('danger')
+    $('#note').removeClass('danger')
     var number = parseInt($('#digit').val());
+    var e = /^\d{1,9999999}$/;
+
+    if( !e.test($('#digit').val())){
+        $('#digit').addClass('danger')
+        $('#note').addClass('danger')
+        $('#note').text('it\'s not a positif integer')
+        return
+    }
     find(number);
 })
 
 $('#reset').on('click', function(){
+    $('#digit').removeClass('danger')
+    $('#note').removeClass('danger')
     put(0);
     $('#digit').val(0)
     $('#note').text('reset')
