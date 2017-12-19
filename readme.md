@@ -1,4 +1,4 @@
-#Prime Count
+# Prime Count
 
 [this](https://colorcreate.github.io/primeCount/) project inspire by my friend who sent me [this](https://youtu.be/8UqCyepX3AI), and I try to make it by my own style
 
