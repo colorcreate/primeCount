@@ -1,5 +1,7 @@
 function getInit(){
     $('#note').text('loading...')
+    $('#digit').removeClass('danger')
+    $('#note').removeClass('danger')
     $.ajax({
         url: 'https://5a391579413d2400125bb1e7.mockapi.io/api/v1/note/1',
         method: 'get',
@@ -52,7 +54,12 @@ function find(number) {
     number++;
     $('#digit').val(number)
     $('#note').text('')
-
+    if(number == 9999999) {
+        $('#note').text('cannot generate prime exceed 9999999, try another one')
+        $('#digit').addClass('danger')
+        $('#note').addClass('danger')
+        return 
+    }
     if(!prime(number)){
         setTimeout(function(){
             find(number)

@@ -34,6 +34,10 @@ section #response #note {
   color: #181915;
   margin-top: -10px;
 }
+section #response .danger {
+  color: #f64719 !important;
+  background: #181915 !important;
+}
 section #control {
   font-size: 30px;
 }
