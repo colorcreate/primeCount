@@ -1,0 +1,83 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: #48b7a7;
+  font-family: 'Inconsolata', monospace;
+}
+section {
+  width: 400px;
+  height: 170px;
+  color: #f6f0f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section #response #digit {
+  font-size: 100px;
+  text-align: center;
+  background: none;
+  border: none;
+  width: 100%;
+  color: #f6f0f6;
+}
+section #response #digit:focus {
+  outline: none;
+}
+section #response #note {
+  text-align: center;
+  color: #181915;
+  margin-top: -10px;
+}
+section #control {
+  font-size: 30px;
+}
+section #control #next,
+section #control #reset {
+  width: fit-content;
+  background: #efb131;
+  padding: 3px 10px 5px;
+  height: 30px;
+  line-height: 30px;
+}
+section #control #next:hover,
+section #control #reset:hover {
+  background: #f64719;
+  cursor: pointer;
+  transform: translate(5px, 2px);
+}
+section #control #next {
+  float: left;
+}
+section #control #reset {
+  float: right;
+}
+#review {
+  position: fixed;
+  top: 30px;
+  color: #f6f0f6;
+}
+::selection {
+  color: #f64719;
+  background: #181915;
+}
+a {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  text-decoration: none;
+}
+a img {
+  height: 20px;
+  width: 20px;
+}
+a span {
+  color: white;
+  margin-left: 5px;
+}
