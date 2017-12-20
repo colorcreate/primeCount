@@ -87,6 +87,13 @@ $('#next').on('click', function(){
     var number = parseInt($('#digit').val());
     var e = /^\d{1,9999999}$/;
 
+    if(number == 9999999) {
+        $('#note').text('cannot generate prime exceed 9999999, try another one')
+        $('#digit').addClass('danger')
+        $('#note').addClass('danger')
+        return 
+    }
+    
     if( !e.test($('#digit').val())){
         $('#digit').addClass('danger')
         $('#note').addClass('danger')
