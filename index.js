@@ -55,6 +55,7 @@ function prime(number) {
 function find(number) {
     number++;
     $('#digit').val(number)
+    playSound()
     $('#note').text('')
     if(number == 9999999) {
         $('#note').text('cannot generate prime exceed 9999999, try another one')
@@ -72,6 +73,13 @@ function find(number) {
     } 
 
 }
+
+function playSound() {
+    const audio = $('audio')[0]
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+  }
 
 $('#next').on('click', function(){
     $('#digit').removeClass('danger')
